@@ -38,6 +38,5 @@ def hello():
 def list_jobs():
     return jsonify(JOBS)
 
-
 if __name__ == "__main__":
     app.run(debug=True)
