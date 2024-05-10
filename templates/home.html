@@ -10,17 +10,25 @@
             height: 360px;
             width: 100%;
             object-fit: cover;
+            margin-bottom: 16px;
         }
     </style>
 </head>
 <body>
+    {% include 'nav.html' %}
+    <img class="img-fluid" id="banner" src="{{ url_for('static', filename='banner.jpg') }}" height="320">
     <div class="container">
         <h1 class="text-center mt-4 mb-4" >Jovain Careers</h1>
-        <img class="img-fluid" id="banner" src="{{ url_for('static', filename='banner.jpg') }}" height="320">
-        <h2 class="text-center mt-4 mb-4">About Jovain</h2>
-        <p class="lead">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pretium aenean pharetra magna ac placerat vestibulum lectus mauris. Fermentum odio eu feugiat pretium nibh ipsum consequat. At lectus urna duis convallis. Sed sed risus pretium quam vulputate dignissim suspendisse in est. Tortor condimentum lacinia quis vel eros donec ac odio. Sit amet justo donec enim diam vulputate ut. Porta non pulvinar neque laoreet suspendisse. Placerat in egestas erat imperdiet sed euismod nisi. Morbi tincidunt ornare massa eget egestas purus viverra accumsan in.
-        </p>
+        <div class="row" style="margin-bottom: 16px;">
+            <div class="col-md-6">
+                <p class="lead">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pretium aenean pharetra magna ac placerat vestibulum lectus mauris. Fermentum odio eu feugiat pretium nibh ipsum consequat. At lectus urna duis convallis. Sed sed risus pretium quam vulputate dignissim suspendisse in est. Tortor condimentum lacinia quis vel eros donec ac odio. Sit amet justo donec enim diam vulputate ut. Porta non pulvinar neque laoreet suspendisse. Placerat in egestas erat imperdiet sed euismod nisi. Morbi tincidunt ornare massa eget egestas purus viverra accumsan in.
+                </p>
+            </div>
+            <div class="d-none d-md-block col-md-6">
+                <img src="/static/people.jpg" alt="people working" style="height: 320px; border-radius:4px">
+            </div>
+        </div>
         <h2 class="text-center mt-4 mb-4">Open Positions</h2>
         <div>
             {% for job in jobs %}
@@ -29,8 +37,8 @@
         </div>
         <div class="text-center">
         <button class="btn btn-primary btn-lg">Contact Us</button>
-        <p class="mt-4">Copyright 2024, Jovain</p>
         </div>
     </div>
+    {% include 'footer.html' %}
 </body>
 </html>
